@@ -568,6 +568,15 @@ Python é uma linguagem de programação de alto nível, projetada em 1991 por G
 
 Para um melhor entendimento sobre a linguagem Python, segue abaixo um exemplo de um "Olá Mundo" em Python.
 
+```python
+>>> # -*- coding: iso-8859-15 -*-
+>>> texto = 'Olá Mundo'
+>>> print(texto)
+Olá Mundo
+>>> print(type(texto))
+<type 'str'>
+>>>
+```
 > **Figura 17 – Programa "Olá Mundo" em Python.**
 > Fonte: Os autores.
 
@@ -577,21 +586,54 @@ Em Python praticamente tudo é um objeto, ou seja, uma variável do tipo string 
 
 Um método muito utilizado quando se trabalha com strings é o método replace, que tem como função substituir palavras da string, como mostra a Figura 18.
 
+```python
+>>> Texto = 'Python é muito legal'
+>>> print(Texto)
+Python é muito legal
+>>> Texto = Texto.replace('legal', 'fácil')
+>>> print(Texto)
+Python é muito fácil
+```
 > **Figura 18 – Método replace em Python.**
 > Fonte: Os autores.
 
 Outro método de objetos do tipo string é o método split, que é empregado para separar uma string. O método pode ser chamado de duas maneiras: sem parâmetro, separando a string nos espaços em branco, ou com parâmetro, dividindo a string na palavra usada como parâmetro, como é exemplificado na Figura 19.
 
+```python
+>>> Texto = 'Apenas uma string comum'
+>>> Texto.split()
+['Apenas', 'uma', 'string', 'comum']
+>>> Texto.split('string')
+['Apenas uma ', ' comum']
+>>>
+```
 > **Figura 19 – Método split em Python.**
 > Fonte: Os autores.
 
 Se o método split é utilizado para separar, as strings do Python também possuem um método que as junta; esse método é o join, como mostra a Figura 20.
 
+```python
+>>> Texto = 'Apenas uma string comum'
+>>> Texto = Texto.split()
+>>> print(Texto)
+['Apenas', 'uma', 'string', 'comum']
+>>> ' '.join(Texto)
+'Apenas uma string comum'
+```
 > **Figura 20 – Método join em Python.**
 > Fonte: Os autores.
 
 Também pode-se manipular a caixa das letras, com os métodos lower, upper e capitalize; as variações são mostradas na Figura 21.
 
+```python
+>>> Texto = 'Apenas uma string comum'
+>>> Texto.lower()
+'apenas uma string comum'
+>>> Texto.upper()
+'APENAS UMA STRING COMUM'
+>>> Texto.lower().capitalize()
+'Apenas uma string comum'
+```
 > **Figura 21 – Métodos lower, upper e capitalize em Python.**
 > Fonte: Os autores.
 
@@ -599,11 +641,43 @@ Além dos tipos e variáveis comuns (string, int, float e boolean), o Python pos
 
 Uma lista é um conjunto ordenado de valores (semelhante a um vetor em outras linguagens) que são acessados de forma sequencial ou por um índice numérico inteiro. Uma lista pode ser composta de qualquer elemento: números, caracteres, listas ou todos misturados. A Figura 22 mostra os elementos do tipo lista.
 
+```python
+>>> lista_vazia = []
+>>> lista_numeros = [1, 2, 3, 4, 5]
+>>> lista_string = ['Franca', 'Campinas', 'Rio de Janeiro']
+>>> lista_mista = [34, 8, 'chuva', 5.2, 'sol', ['Janeiro', 22]]
+>>> print(lista_vazia)
+[]
+>>> print(lista_numeros)
+[1, 2, 3, 4, 5]
+>>> print(lista_string)
+['Franca', 'Campinas', 'Rio de Janeiro']
+>>> print(lista_mista)
+[34, 8, 'chuva', 5.2, 'sol', ['Janeiro', 22]]
+```
 > **Figura 22 – Elementos tipo lista em Python.**
 > Fonte: Os autores.
 
 Os elementos de uma lista podem ser facilmente acessados e manipulados, permitindo adicionar, estender ou remover elementos de uma lista, e como um elemento do tipo lista é um objeto do tipo lista, podemos ver na Figura 23 alguns exemplos de métodos utilizados para manipular elementos do tipo lista.
 
+```python
+>>> lista_mista = [34, 8, 'chuva', 5.2, 'sol', ['Janeiro', 22]]
+>>> lista_mista[0]
+34
+>>> lista_mista[3]
+5.2
+>>> lista_mista[5]
+['Janeiro', 22]
+>>> lista_mista.append([1, 2, 3])
+>>> lista_mista
+[34, 8, 'chuva', 5.2, 'sol', ['Janeiro', 22], [1, 2, 3]]
+>>> lista_mista.extend([5, 6])
+>>> lista_mista
+[34, 8, 'chuva', 5.2, 'sol', ['Janeiro', 22], [1, 2, 3], 5, 6]
+>>> lista_mista.remove('chuva')
+>>> lista_mista
+[34, 8, 5.2, 'sol', ['Janeiro', 22], [1, 2, 3], 5, 6]
+```
 > **Figura 23 – Manipulando lista em Python.**
 > Fonte: Os autores.
 
@@ -611,21 +685,50 @@ Como pode-se observar na Figura 23, podemos obter o elemento de uma lista apenas
 
 A tupla é um tipo muito parecido com a lista; seus valores podem ser acessados por um índice, porém não podem ser alterados. Esse tipo é aplicado em casos que seja mais eficiente um conjunto fixo de valores. A Figura 24 mostra um exemplo disso.
 
+```python
+>>> tupla_vazia = ()
+>>> tupla_mista = (1, 'quatro', 4.5, 'mouse')
+>>> tupla_mista
+(1, 'quatro', 4.5, 'mouse')
+>>> tupla_mista[2]
+4.5
+```
 > **Figura 24 – Tuplas em Python.**
 > Fonte: Os autores.
 
 Dicionários são estruturas chave/valor que permitem buscar um atributo através de sua chave. A diferença de dicionários com as listas é que o dicionário permite uma chave de qualquer tipo e não índices inteiros sequenciais como as listas, como podemos observar na Figura 25.
 
+```python
+>>> dic_valores = {'nome': 'Lucas', 'idade': 23, 'telefones': [37028773, 992837736]}
+>>> dic_valores
+{'idade': 23, 'telefones': [37028773, 992837736], 'nome': 'Lucas'}
+>>> dic_valores['nome']
+'Lucas'
+```
 > **Figura 25 – Dicionários em Python.**
 > Fonte: Os autores.
 
 Seus valores podem ser alterados de maneira direta, como mostra a Figura 26.
 
+```python
+>>> dic_valores['idade'] = 19
+>>> dic_valores
+{'idade': 19, 'telefones': [37028773, 992837736], 'nome': 'Lucas'}
+```
 > **Figura 26 – Manipulando elemento do dicionário.**
 > Fonte: Os autores.
 
 Alguns métodos da classe dicionário tornam ainda mais simples a manipulação desse tipo de dado, como por exemplo, o método keys, que retorna uma lista com todas as chaves do dicionário, o método values, que retorna uma lista com todos os valores, e items, que retorna uma lista de tuplas com os atributos do dicionário na estrutura chave/valor, como pode-se observar na Figura 27.
 
+```python
+>>> dic_valores.keys()
+['idade', 'telefones', 'nome']
+>>> dic_valores.values()
+[19, [37028773, 992837736], 'Lucas']
+>>> dic_valores.items()
+[('idade', 19), ('telefones', [37028773, 992837736]), ('nome', 'Lucas')]
+>>>
+```
 > **Figura 27 – Métodos keys, values e items do tipo dicionário.**
 > Fonte: Os autores.
 
@@ -635,16 +738,33 @@ Criado em 2001 por Edward Loper, Ewan Klein e Steven Bird, o Natural Language To
 
 Para poder utilizar a biblioteca NLTK deve-se importar o pacote no início de cada arquivo Python; o import pode ser total, que acontece quando se importa todo o pacote, ou parcial, quando se importa apenas uma parte da biblioteca. Perceba na Figura 28 as duas maneiras de executar uma importação.
 
+```python
+>>> import nltk
+>>> from nltk import word_tokenize
+```
 > **Figura 28 – Tipos de import da biblioteca NLTK.**
 > Fonte: Os autores.
 
 O processo de tokenização do texto, que nada mais é do que decompor o documento nas sentenças que o constituem, é uma etapa crucial em qualquer projeto que trabalhe com processamento de linguagem natural, e a biblioteca NLTK disponibiliza um método que realiza tal procedimento, o word_tokenize. A Figura 29 mostra o método word_tokenize dividindo a frase em tokens.
 
+```python
+>>> texto = 'Um dia frio, um bom lugar para ler um livro'
+>>> tokens_texto = word_tokenize(texto)
+>>> tokens_texto
+['Um', 'dia', 'frio', ',', 'um', 'bom', 'lugar', 'para', 'ler', 'um', 'livro']
+```
 > **Figura 29 – Método word_tokenize da biblioteca NLTK.**
 > Fonte: Os autores.
 
 A biblioteca também fornece um método que retorna uma lista de stopwords, para que possa ser feita a limpeza do texto, retirando, assim, palavras que não contêm semântica, como artigos, pronomes, etc.
 
+```python
+>>> nltk.corpus.stopwords.words('portuguese')
+['de', 'a', 'o', 'que', 'e', 'do', 'da', 'em', 'um', 'para', 'com',
+ 'uma', 'os', 'no', 'se', 'na', 'por', 'mais', 'as', 'dos', 'como',
+ 'mas', 'ao', 'ele', 'das', 'seu', 'sua', 'ou', 'quando', 'muito',
+ ...]
+```
 > **Figura 30 – Método word_tokenize da biblioteca NLTK.**
 > Fonte: Os autores.
 
@@ -665,6 +785,29 @@ O objetivo do protótipo é apanhar uma quantidade de tweets e ser capaz de clas
 
 A coleta de tweets, tanto para a montagem da base de treinamento, quanto para a classificação em si, foi feita através de uma biblioteca focada em coleta de dados no Twitter, chamada TwitterSearch. A seguir, o código utilizado para tal função.
 
+```python
+def pegaTweets(self, key):
+    lista_tweets = []
+    tso = TwitterSearchOrder()
+    tso.setKeywords([key])
+    tso.setLanguage('pt')
+    tso.setCount(1)
+
+    ts = TwitterSearch(
+        consumer_key        = 'ia8mYN1LBd9mhMQgxBwFSw',
+        consumer_secret     = 'cn2sGFlyQqp1lOPb9wVHFI0gSQI5C296XrsN5cgHw',
+        access_token        = '60440481-8XyGsX7GSFYj3g2Ylp7twsehG3F1pN0BV7HGIKXvAad',
+        access_token_secret = 'hTRIG2y7VTUn3x9eaCqyXABcD4VWVwQR8sHXbrX4QcFD4'
+    )
+
+    for tweet in ts.searchTweetsIterable(tso):
+        processar = processamentoTexto()
+        tw = processar.remover_acentos(tweet['text'].encode('utf-8').strip().strip('/n'))
+        tw = processar.processatweet(tw)
+        print('%s Twittou: %s' % (tweet['user']['screen_name'], tweet['text']))
+        lista_tweets.append(tw)
+    return lista_tweets
+```
 > **Figura 32 – Método pegaTweets da classe Spyder.**
 > Fonte: Os autores.
 
@@ -674,16 +817,39 @@ A Figura 32 representa o único método da classe Spyder. Esse método é respon
 
 Os tweets obtidos pelo método pegaTweets da classe Spyder chegam da maneira que foram escritos pelos usuários. Para um melhor resultado da classificação, os tweets passam por um tratamento, para a redução de ruídos, que possam vir a atrapalhar o processo de classificação.
 
+```python
+def processatweet(self, tweet):
+    tweet = tweet.lower()
+    tweet = re.sub(r'((www\.[\ s]+)|(https?://[^\s]+))', '', tweet)
+    tweet = re.sub(r'@[^\s]+', '', tweet)
+    tweet = re.sub(r'#([^\s]+)', r'\1', tweet)
+    tweet = tweet.replace('rt', '')
+    return tweet
+```
 > **Figura 33 – Método processatweet da classe processamentoTexto.**
 > Fonte: Os autores.
 
 No método processatweet ilustrado na Figura 33, é realizada uma limpeza específica no texto, com o auxílio de expressão regular, retirando elementos peculiares da linguagem do tweet, tais como links ou URLs, hashtags, menções de nomes de outros usuários como, por exemplo, @RomuloMilani, e a expressão RT que significa retweet.
 
+```python
+def removestopwords(self, tweet):
+    stopwords = nltk.corpus.stopwords.words('portuguese')
+    novo_tweet = []
+    for t in tweet:
+        if t not in stopwords and t not in string.punctuation:
+            novo_tweet.append(t)
+    return novo_tweet
+```
 > **Figura 34 – Método removestopwords da classe processamentoTexto.**
 > Fonte: Os autores.
 
 As chamadas stopwords e caracteres de pontuação são removidos com o método removestopwords, que alimenta sua lista de palavras que não contêm semântica do corpus de stopwords em português, que a biblioteca NLTK fornece, e com o método punctuation do objeto string, que retorna uma lista de caracteres de pontuação. Esse processo pode ser observado na Figura 34.
 
+```python
+def tokenizacao(self, tweet):
+    texto_tokenizado = nltk.word_tokenize(tweet)
+    return texto_tokenizado
+```
 > **Figura 35 – Método tokenizacao da classe processamentoTexto.**
 > Fonte: Os autores.
 
@@ -691,6 +857,10 @@ O método de tokenização, como mostra a Figura 35, recebe um tweet e realiza o
 
 O último método da classe processamentoTexto, que podemos observar na Figura 36, tem como função remover os acentos das sentenças, com a aplicação do método normalize do pacote unicodedata. São aplicadas técnicas de decomposição de compatibilidade para a substituição dos caracteres.
 
+```python
+def remover_acentos(self, txt):  # função que retira os acentos
+    return normalize('NFKD', txt.decode('utf-8')).encode('ASCII', 'ignore')
+```
 > **Figura 36 – Método remover_acentos da classe processamentoTexto.**
 > Fonte: Os autores.
 
@@ -707,9 +877,29 @@ O modelo de classificação abordado neste trabalho é denominado supervisionado
 
 Para realizar a classificação supervisionada de forma autônoma, é necessário um conjunto de tweets classificados manualmente. Na implementação para o treinamento do protótipo foram utilizados 500 tweets positivos e 500 tweets negativos, números considerados razoáveis. Para se obter maior precisão deve-se usar um conjunto maior.
 
+```python
+tweets_positivos = [
+    ('Eu gosto deste carro',                     'positivo'),
+    ('legal ver voce aqui',                       'positivo'),
+    ('noite tava boa pra dizer melhor excelente', 'positivo'),
+    ('sim vou enviar agora',                      'positivo'),
+    ('sentindo bem avontade',                     'positivo'),
+    ('esporte e espetacular',                     'positivo'),
+]
+```
 > **Figura 38 – Lista de tuplas contendo tweets positivos.**
 > Fonte: Os autores.
 
+```python
+tweets_negativos = [
+    ('voce foi mau na prova',             'negativo'),
+    ('porcaria ficou tode grudada eparelho','negativo'),
+    ('serio nao gostei',                  'negativo'),
+    ('horrimei ficar sozinho',             'negativo'),
+    ('o que ele fez foi inadmissivel',     'negativo'),
+    ('este computador e inutil',           'negativo'),
+]
+```
 > **Figura 39 – Lista de tuplas contendo tweets negativos.**
 > Fonte: Os autores.
 
@@ -719,41 +909,127 @@ As Figuras 38 e 39 exemplificam a estrutura utilizada no protótipo para manipul
 
 O primeiro passo para o processo de treinamento do algoritmo é a extração das características do documento. E para extrair as características, necessita-se de todas as palavras contidas nele. A função do método pega_palavras_tweet, que temos na Figura 40, é exatamente esta. Dada a lista de tweets de treinamento, o método retira e cria uma lista com todas as palavras contidas no documento.
 
+```python
+def pega_palavras_tweet(self, list_tweet):
+    todas_palavras = []
+    for (palavra, sentimento) in list_tweet:
+        todas_palavras.extend(palavra)
+    return todas_palavras
+```
 > **Figura 40 – Método que retira todas as palavras da lista de treinamento.**
 > Fonte: Os autores.
 
 Após obter todas as palavras contidas no documento, é necessário obter as palavras mais frequentes desta lista de palavras. O método pega_frequencia_de_palavras, da Figura 41, retorna essas palavras.
 
+```python
+def pega_frequencia_das_palavras(self, lista_palavras):
+    list_frequencia = nltk.FreqDist(lista_palavras)
+    palavras_frequentes = list_frequencia.keys()[:2000]
+    return palavras_frequentes
+```
 > **Figura 41 – Método que retorna as 2000 palavras mais frequentes.**
 > Fonte: Os autores.
 
 A função FreqDist da biblioteca NLTK recebe a lista de palavras e retorna um dicionário palavra/frequência, como pode ser visto na Figura 42, e com o método Keys se extrai apenas o índice do dicionário, formando assim uma lista das 2000 palavras mais frequentes.
 
+```
+<FreqDist:
+    'noite': 35,
+    'amanha': 33,
+    'aqui': 32,
+    'queria': 26,
+    'quero': 26,
+    'feliz': 21,
+    'gosto': 20,
+    'agora': 19,
+    'deus': 19,
+    'fazer': 19,
+    ...>
+```
 > **Figura 42 – Dicionário resultado do método FreqDist do NLTK.**
 > Fonte: Os autores.
 
 Após obter o conjunto de treinamento e as palavras mais frequentes desse conjunto, pode-se extrair as características do documento. A função extrair_caracteristicas recebe o conjunto de treinamento e compara palavra por palavra com as palavras mais frequentes, como pode-se observar na Figura 43.
 
+```python
+def extrair_caracteristicas(self, documento):
+    document_words = documento
+    caracteristicas = {}
+    for palavra in palavras_frequentes:
+        caracteristicas['Contem(%s)' % palavra] = (palavra in document_words)
+    return caracteristicas
+```
 > **Figura 43 – Método de extração de características.**
 > Fonte: Os autores.
 
 O resultado do método ilustrado na Figura 44 é um dicionário, que informa se a palavra do documento contém as palavras mais frequentes. Por exemplo, se um dos tweets apresentar as palavras ['feliz', 'hoje', 'bicicleta'], a saída resultante seria assim:
 
+```python
+{'Contem(luta)': False,
+ 'Contem(bicicleta)': True,
+ 'Contem(sonho)': False,
+ 'Contem(hackeia)': False,
+ 'Contem(acordar)': False,
+ 'Contem(confoavel)': False,
+ 'Contem(hoje)': True,
+ 'Contem(feliz)': True,
+ 'Contem(site)': False,
+ ...}
+```
 > **Figura 44 – Dicionário resultado do método extrair_caracteristicas.**
 > Fonte: Os autores.
 
 Após obter o extrator de características, ele será utilizado para criar o conjunto de treinamento para o classificador Naive Bayes. Obtém-se esse conjunto com o método apply_features da biblioteca NLTK, método que recebe a função que extrai as características e a lista de tweets de treinamento, e retorna uma lista de tuplas, contendo cada tupla uma estrutura dicionário de característica/etiqueta, como é ilustrado na Figura 45.
 
+```python
+[({'Contem(luta)': False,
+   'Contem(bicicleta)': True,
+   'Contem(sonho)': True,
+   'Contem(hackeia)': False,
+   ...
+   'Contem(feliz)': True}, 'positivo'),
+ ({'Contem(mau)': False,
+   'Contem(jogo)': False,
+   'Contem(futebol)': True,
+   'Contem(gol)': True,
+   ...
+   'Contem(trave)': False}, 'negativo'),
+ ...]
+```
 > **Figura 45 – Conjunto de treinamento, retorno do método apply_features.**
 > Fonte: Os autores.
 
 Com o conjunto de treinamento pode-se treinar o classificador Naive Bayes, através do método train. A Figura 46 mostra como se inicia o treinamento.
 
+```python
+classificador = nltk.NaiveBayesClassifier.train(conjunto_treino)
+```
 > **Figura 46 – Treinando o classificador Naive Bayes.**
 > Fonte: Os autores.
 
 Com o classificador treinado pode-se obter informações interessantes sobre o mesmo. Uma delas é apresentar as características mais relevantes, com o método show_most_informative_features.
 
+```
+>>> print(classificador.show_most_informative_features())
+
+  Contem(queria) = True          negati : positi =     17.0 : 1.0
+ Contem(parabens) = True         positi : negati =     11.7 : 1.0
+  Contem(triste) = True          negati : positi =     11.0 : 1.0
+     Contem(boa) = True          negati : positi =     10.7 : 1.0
+   Contem(noite) = True          positi : negati =      9.3 : 1.0
+Contem(saudades) = True          positi : negati =      7.7 : 1.0
+   Contem(legal) = True          positi : negati =      7.0 : 1.0
+     Contem(nao) = True          negati : positi =      7.0 : 1.0
+    Contem(cara) = True          negati : positi =      6.3 : 1.0
+ Contem(saudade) = True          negati : positi =      5.4 : 1.0
+   Contem(final) = True          positi : negati =      5.0 : 1.0
+    Contem(foda) = True          negati : positi =      4.3 : 1.0
+   Contem(odeio) = True          negati : positi =      4.3 : 1.0
+   Contem(ainda) = True          negati : positi =      3.8 : 1.0
+  Contem(melhor) = True          positi : negati =      3.8 : 1.0
+     Contem(mal) = True          negati : positi =      3.8 : 1.0
+   Contem(quase) = True          positi : negati =      3.7 : 1.0
+```
 > **Figura 47 – Características relevantes do classificador.**
 > Fonte: Os autores.
 
@@ -761,11 +1037,21 @@ Como se pode observar na Figura 47, de acordo com a base de treinamento, tweets 
 
 O pacote NLTK também traz um método onde é possível medir o grau de precisão do classificador em relação ao conjunto teste. A função classify.accuracy, com base no classificador e em um conjunto teste, calcula a precisão do algoritmo, onde 0,00 é o mínimo e 1,00 é o máximo. A Figura 48 mostra a precisão do algoritmo aplicado.
 
+```python
+>>> nltk.classify.accuracy(classificador, conjunto_teste)
+0.45
+```
 > **Figura 48 – Método para o cálculo de precisão do classificador.**
 > Fonte: Os autores.
 
 Após passar por cada etapa descrita, o algoritmo está pronto para realizar a classificação de um documento, no caso, um tweet. A Figura 49 mostra um tweet sendo classificado.
 
+```python
+>>> Tweet = 'É mais do que clara a intenção malévola da Veja de interferir de forma desonesta e desleal nos resultados das eleições.'
+>>> treino = Treino()
+>>> classificador.classify(treino.extrair_caracteristicas(Tweet))
+'negativo'
+```
 > **Figura 49 – Classificação de um tweet.**
 > Fonte: Os autores.
 
