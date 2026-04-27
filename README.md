@@ -1,6 +1,6 @@
 # Mineração de Texto em Língua Portuguesa
 
-**Autor:** Rômulo Milani Domingos
+**Autor:** Rômulo Milani
 
 Trabalho de Conclusão de Curso apresentado como exigência parcial, para a obtenção do grau no curso de Ciência da Computação, da Universidade de Franca.
 
