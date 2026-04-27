@@ -8,17 +8,6 @@ Trabalho de Conclusão de Curso apresentado como exigência parcial, para a obte
 
 Franca, 2014
 
----
-
-*Dedico aos meus pais, Maria Aparecida Milani Domingos e Donizeti Francisco Domingos, meus exemplos de caráter, força e dignidade. Sem dúvida, os maiores mestres que já tive.*
-
-*Agradeço a meus irmãos, Henrique e Débora por todo amor; à minha orientadora Claudia Vicci Amadeu, pelo esforço e apoio nessa jornada; à minha namorada Mirella Souza Oliveira, pela compreensão e carinho; a todos os meus amigos que sempre me ajudaram, torceram e acreditaram em mim.*
-
-> "O maior talento que alguém pode ter é a dedicação."
-> — José Tiago Sabino
-
----
-
 ## Sumário
 
 - [Resumo](#resumo)
